@@ -7,7 +7,6 @@ public class Menu implements Serializable {
     /* Private Fields */
     private int menuId;
     private String name;
-    private int price;
     private List<Tag> tagList = new ArrayList<Tag>();
 
     /* JavaBeans Properties */
