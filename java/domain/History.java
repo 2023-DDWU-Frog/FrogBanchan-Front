@@ -6,9 +6,9 @@ public class History implements Serializable {
 
     /* Private Fields */
     private String username;
-    Timestamp recordedDate;  // 이거 이렇게 하는거 맞나요..?
-    private int menuId;
-    private int placeId;
+    Timestamp recorded_date;
+    private int menu_id;
+    private int place_id;
     private int score;
 
     /* JavaBeans Properties */
@@ -19,25 +19,22 @@ public class History implements Serializable {
         this.username = username;
     }
 
-    public Timestamp getRecordedDate() {
-        return recordedDate;
-    }
-    public void setRecordedDate(Timestamp recordedDate) {
-        this.recordedDate = recordedDate;
+    public Timestamp getRecorded_date() {
+        return recorded_date;
     }
 
-    public int getMenuId() {
-        return menuId;
+    public int getMenu_id() {
+        return menu_id;
     }
-    public void setMenuId(int menuId) {
-        this.menuId = menuId;
+    public void setMenu_id(int menu_id) {
+        this.menu_id = menu_id;
     }
 
-    public int getPlaceId() {
-        return placeId;
+    public int getPlace_id() {
+        return place_id;
     }
-    public void setPlaceId(int placeId) {
-        this.placeId = placeId;
+    public void setPlace_id(int place_id) {
+        this.place_id = place_id;
     }
 
     public int getScore() {

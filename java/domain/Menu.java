@@ -5,16 +5,16 @@ import java.util.List;
 public class Menu implements Serializable {
 
     /* Private Fields */
-    private int menuId;
+    private int menu_id;
     private String name;
-    private List<Tag> tagList = new ArrayList<Tag>();
+    private List<String> tag_list = new ArrayList<String>();
 
     /* JavaBeans Properties */
-    public int getMenuId() {
-        return menuId;
+    public int getMenu_id() {
+        return menu_id;
     }
-    public void setMenuId(int menuId) {
-        this.menuId = menuId;
+    public void setMenu_id(int menu_id) {
+        this.menu_id = menu_id;
     }
 
     public String getName() {
@@ -24,20 +24,15 @@ public class Menu implements Serializable {
         this.name = name;
     }
 
-    public int getPrice() {
-        return price;
+    public List<String> getTag_list() {
+        return tag_list;
     }
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public List<Tag> getTagList() {
-        return tagList;
-    }
-    public void setTagList(List<Tag> tagList) {
-        this.tagList = tagList;
+    public void setTag_list(List<String> tag_list) {
+        this.tag_list = tag_list;
     }
 
     /* Public Methods */
-
+    public String toString() {
+        return getName();
+    }
 }

@@ -17,11 +17,14 @@ public interface HistoryDao {
     //[SELECT * FROM HISTORY WHERE USERNAME = ?]
 
     //히스토리 생성
-    void insertHistory(History history) throws DataAccessException;
-    //[INSERT INTO HISTORY (USERNAME, RECORDED_DATE, MENU_ID, PLACE_ID, SCORE) VALUES]
+    void insertHistory(String username, String place_id) throws DataAccessException;
+    //[INSERT INTO HISTORY (USERNAME, PLACE_ID) VALUES ...]
 
     //히스토리 수정
-    void updateHistory(History history) throws DataAccessException;
-    //[UPDATE HISTORY SET MENU_ID = ?, SCORE = ? WHERE USERNAME = ? AND RECORDED_DATE = ?] 팀 이름, 주소 변경
+    void updateHistory(String username, History history) throws DataAccessException;
+    //[UPDATE HISTORY SET MENU_ID = ?, SCORE = ? WHERE USERNAME = ? AND RECORDED_DATE = ?]
 
+    //히스토리 삭제
+    void deleteHistory(String username, Timestamp recorded_date) throws DataAccessException;
+    //[DELETE FROME HISTORY WHERE USERNAME = ? AND RECORDED_DATE = ?]
 }
