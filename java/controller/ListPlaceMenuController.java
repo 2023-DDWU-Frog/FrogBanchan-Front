@@ -6,7 +6,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.frogbanchan.domain.PlaceMenu;
 import com.example.frogbanchan.service.FrogbanchanFacade;
 
 @Controller
@@ -20,11 +19,13 @@ public class ListPlaceMenuController {
         this.frogbanchan = frogbanchan;
     }
 
+
     @RequestMapping("/placemenu/list.do")
-    public String handleRequest(ModelMap model)
-            throws Exception {
-        List<PlaceMenu> placeMenuList = new List<PlaceMenu>(this.frogbanchan.findMenuListByPlaceId());
-        model.put("partyList", partyList);
-        return "Party";
+    public ModelAndView handleRequest(
+            @ModelAttribute("userSession") UserSession userSession
+    ) throws Exception {
+        String place_id = userSession.getAccount().getUsername();
+        return new ModelAndView("응답할 뷰 이름", "placeMenuList",
+                frogbanchan.findMenuListByPlaceId(place_id));
     }
 }
